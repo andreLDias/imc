@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyledButton } from './styles'
 
-export const Button = ({ content = 'test' }) => {
+interface ButtonProps {
+  content?: string
+}
+
+export const Button: React.FC<ButtonProps> = ({ content }) => {
   return (
     <StyledButton>
       {content}
