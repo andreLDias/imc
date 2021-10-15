@@ -1,15 +1,13 @@
 import React from 'react';
 import { Wrapper } from './styles'
-import { Button, Input, RadioButton } from '../../atoms'
+import { MainCalculator } from 'components/organisms';
 
-function Calculator() {
+function ImcCalculator() {
   return (
     <Wrapper className="Calculator">
-      <Button content={'test'}/>
-      <Input/>
-      <RadioButton selected={true}/>
+      <MainCalculator textSize={25} />
     </Wrapper>
   )
 }
 
-export default Calculator;
+export default ImcCalculator;

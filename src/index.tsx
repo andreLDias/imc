@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Calculator from './components/templates/calculator'
+import ImcCalculator from './components/templates/calculator'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calculator />
+    <ImcCalculator />
   </React.StrictMode>,
   document.getElementById('root')
 )
