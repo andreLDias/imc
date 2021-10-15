@@ -1,6 +1,7 @@
+import React from 'react';
 import { Button } from 'components/atoms';
 import { InfoInput } from 'components/molecules';
-import React from 'react';
+import { useMainCalculator } from './hooks';
 import { Wrapper } from './styles'
 
 interface MainCalculatorProps {
@@ -8,11 +9,20 @@ interface MainCalculatorProps {
 }
 
 export const MainCalculator: React.FC<MainCalculatorProps> = ({ textSize }) => {
+  const { handlers, states } = useMainCalculator()
+  const {
+    handleWeightInput,
+    handleHeightInput,
+    handleCalculateImcButton
+  } = handlers
+  const { imc } = states
+
   return (
     <Wrapper>
-      <InfoInput text={'Altura'} textSize={textSize} />
-      <InfoInput text={'Peso'} textSize={textSize} />
-      <Button content={'Calcular'} />
+      <InfoInput text={'Altura'} textSize={textSize} onChange={handleHeightInput} />
+      <InfoInput text={'Peso'} textSize={textSize} onChange={handleWeightInput} />
+      <Button content={'Calcular'} onClick={handleCalculateImcButton} />
+      {console.log(imc)}
     </Wrapper>
   )
 }

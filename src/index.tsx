@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ImcCalculator from './components/templates/calculator'
+import ImcCalculator from './components/templates/mainPage'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
