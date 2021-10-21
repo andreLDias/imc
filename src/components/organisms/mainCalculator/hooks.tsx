@@ -1,9 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export const useMainCalculator = () => {
   const [weight, setWeight] = useState(0)
   const [height, setHeight] = useState(0)
   const [imc, setImc] = useState(0)
+  const [buttonDisabled, setButtonDisabled] = useState(true)
+
+  useEffect(() => {
+    if (weight && height) return setButtonDisabled(false)
+    setButtonDisabled(true)
+  }, [weight, height])
+
 
   const handleWeightInput = (weightInput: number) => {
     setWeight(weightInput)
@@ -25,7 +32,9 @@ export const useMainCalculator = () => {
     height,
     setHeight,
     imc,
-    setImc
+    setImc,
+    buttonDisabled,
+    setButtonDisabled
   }
   const handlers = {
     handleWeightInput,
