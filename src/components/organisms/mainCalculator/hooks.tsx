@@ -37,7 +37,7 @@ export const useMainCalculator = () => {
     const value = Math.round(weight / (heightInMeters * heightInMeters) * 100) / 100
     setImc(value)
     const rate = checkIMCratio(value)
-    alert(`Seu IMC é: ${value}. Sua categoria é: ${ImcTranslator(rate!)}`)
+    alert(`Seu IMC é: ${(value).toString().replace(/\./g, ',')}. Sua categoria é: ${ImcTranslator(rate!)}`)
   }
 
   const states = {
