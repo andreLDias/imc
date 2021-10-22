@@ -15,14 +15,13 @@ export const MainCalculator: React.FC<MainCalculatorProps> = ({ textSize }) => {
     handleHeightInput,
     handleCalculateImcButton
   } = handlers
-  const { imc, buttonDisabled } = states
+  const { buttonDisabled } = states
 
   return (
     <Wrapper>
       <InfoInput text={'Altura'} textSize={textSize} onChange={handleHeightInput} />
       <InfoInput text={'Peso'} textSize={textSize} onChange={handleWeightInput} />
       <Button content={'Calcular'} onClick={handleCalculateImcButton} disabled={buttonDisabled} />
-      {console.log(imc)}
     </Wrapper>
   )
 }
